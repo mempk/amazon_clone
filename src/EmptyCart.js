@@ -22,7 +22,7 @@ function EmptyCart() {
               id="123456"
               title="VR Headset Compatible with iPhone & Android Phone - Universal Virtual Reality Goggles - Play Your Best Mobile Games 360 Movies with Soft & Comfortable New 3D VR Glasses |"
               image="https://images-na.ssl-images-amazon.com/images/I/913t4R2zEmL._SL1500_.jpg"
-              price="$12.99"
+              price={12.99}
               rating={5}
             />
           </li>

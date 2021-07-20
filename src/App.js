@@ -10,12 +10,13 @@ import { useStateValue } from "./context-api/StateProvider";
 
 function App() {
 
-  const [dispatch] = useStateValue();
+  const [{basket},dispatch] = useStateValue();
 
 
   useEffect(() => {
 
     const unsubscribe = auth.onAuthStateChanged((authUser) =>{
+      console.log(authUser);
          if(authUser){
           dispatch({
             type:"SET_USER",
@@ -33,7 +34,6 @@ function App() {
          unsubscribe();
        }
   }, [])
-
 
   return (
     <Router>

@@ -15,6 +15,7 @@ function Login() {
         auth.signInWithEmailAndPassword(email, password)
         .then((auth) => { 
            history.push("/");
+           console.log(auth)
         })
         .catch(e =>alert(e.message))
     }
@@ -49,7 +50,6 @@ function Login() {
         </form>
         <p>By continuing, you agree to Amazon's Conditions of Use and Privacy Notice.</p>
         <button className ="login_button_create" onClick={register}> Create your Amazon account</button>
-        
 
     </div>
     </div>

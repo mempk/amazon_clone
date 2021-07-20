@@ -9,6 +9,7 @@ export
 function reducer(state,action){
     switch(action.type){
         case "SET_USER":
+            console.log(action.user)
             return{
                 ...state,
                 user:action.user
@@ -21,9 +22,7 @@ function reducer(state,action){
         case 'REMOVE_FROM_BASKET':
             let newBasket = [...state.basket];
             const index = state.basket.findIndex(basketItem => basketItem.id === action.id);
-
             if(index >= 0){
-             
                 newBasket.splice(index,1);
 
             }else{
