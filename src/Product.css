@@ -1,9 +1,12 @@
 .product{
     display: flex;
+    flex:1;
     flex-direction: column;
     align-items: center;
-    max-height: 400px;
-    min-width: 100px;
+    flex-wrap: wrap;
+    max-height:450px;
+    min-width: 200px;
+    flex-basis: auto;
     margin:10px;
     z-index: 1;
     background-color: white;
@@ -27,8 +30,12 @@
     margin-bottom: 15px;
 }
 
-.product > button{
+button{
     background-color: #f0c14b;
-    border: 1px solid;
     margin-bottom: 15px;
+    border:none;
+    padding:5px;
+    font-weight: 600;
+    border-radius: 5px;
 }
+

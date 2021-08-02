@@ -17,3 +17,9 @@
     margin-left: 5px;
     margin-right: 5px;
 }
+
+@media (max-width: 640px) {
+    .home_row{
+        flex-direction: column;
+    }
+  }

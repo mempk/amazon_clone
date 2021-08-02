@@ -3,9 +3,19 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+import { useStateValue } from "./context-api/StateProvider";
+import { auth } from "./firebase";
 
 function Header() {
-  return (
+
+
+  const[{basket, user}] = useStateValue();
+
+  const login = () =>{
+    auth.signOut();
+
+  }
+   return (
     <nav className="header">
       <Link to="/">
         <img
@@ -18,10 +28,10 @@ function Header() {
         <SearchIcon className="header_searchIcon" />
       </div>
       <div className="header_nav">
-        <Link className="header_link">
-          <div className="header_option">
-            <span className="header_optionLine1">Hello Madhav</span>
-            <span className="header_optionLine2">Sign In</span>
+        <Link to ={!user && "/login"} className="header_link">
+          <div onClick={login} className="header_option">
+            <span className="header_optionLine1">Hello {user?.email}</span>
+            <span className="header_optionLine2">{user?"Sign Out":"Sign In"}</span>
           </div>
         </Link>
         <Link className="header_link">
@@ -39,7 +49,7 @@ function Header() {
         <Link to="/checkout">
           <div className="header_optionBasket">
             <ShoppingBasketIcon />
-            <span className="header_optionLine2 header_basketCount">0</span>
+            <span className="header_optionLine2 header_basketCount">{basket?.length}</span>
           </div>
         </Link>
       </div>
